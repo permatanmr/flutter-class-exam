@@ -20,7 +20,7 @@ class _SearchFlightState extends State<SearchFlight> {
         ),
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
-        title: const Text('SEARCH', textAlign: TextAlign.center),
+        title: const Text('Search', textAlign: TextAlign.center),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -54,9 +54,9 @@ class _SearchFlightState extends State<SearchFlight> {
                   ), //BoxShadow
                 ],
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -76,21 +76,49 @@ class _SearchFlightState extends State<SearchFlight> {
                       ],
                     ),
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Column(
-                        children: [Text('From'), Text('Jakarta')],
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [Text('From'), Text('Jakarta')],
+                        ),
                       ),
-                      Column(
-                        children: [Text('To'), Text('Surabaya')],
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [Text('To'), Text('Surabaya')],
+                        ),
                       ),
                     ],
                   ),
-                  Column(
+                  const Column(
                     children: [Text('Departure Date'), Text('2023-06-30')],
                   ),
-                  Text('Hello'),
+                  TextButton(
+                    style: ButtonStyle(
+                        backgroundColor:
+                            const MaterialStatePropertyAll<Color>(Colors.red),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.zero,
+                                    side: BorderSide(color: Colors.red)))),
+                    onPressed: () {},
+                    child: const SizedBox(
+                      width: 100,
+                      child: Text(
+                        "Search123",
+                        style: TextStyle(
+                          color: Color(0xffffffff),
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
                 ],
               )),
         ),
